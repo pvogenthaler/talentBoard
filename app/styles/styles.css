@@ -139,7 +139,6 @@ html, body, #container, #containter > div, [data-reactroot] {
   justify-content: flex-start;
 }
 
-g.recharts-layer.recharts-pie {
-  background-color: silver;
-
+.pieContainer {
+  /*background-color: silver;*/
 }
