@@ -1,5 +1,5 @@
 import {getJobsData} from '../services/glassdoorApi.js';
-import {StraightAnglePieChart} from './piechart.jsx'
+import {MyPieChart} from './piechart.jsx'
 
 class Content extends React.Component {
 
@@ -31,7 +31,7 @@ class Content extends React.Component {
   render() {
     return (
       <div>
-        <StraightAnglePieChart data={this.state.data}/>
+        <MyPieChart data={this.state.data}/>
       </div>
     );
   }

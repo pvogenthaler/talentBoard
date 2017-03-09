@@ -6,8 +6,10 @@ import {Content} from '../components/content.jsx';
 const dashboard = (
   <div>
     <Header/>
-    <Content/>
-    <Footer/>
+    <div className="contentAndFooter">
+      <Footer/>
+      <Content/>
+    </div>
   </div>
 );
 

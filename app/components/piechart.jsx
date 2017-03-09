@@ -1,7 +1,7 @@
 import { PieChart, Pie, Legend, Tooltip } from 'recharts';
 
 
-class StraightAnglePieChart extends React.Component {
+class MyPieChart extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -22,4 +22,4 @@ class StraightAnglePieChart extends React.Component {
   }
 }
 
-module.exports.StraightAnglePieChart = StraightAnglePieChart;
+module.exports.MyPieChart = MyPieChart;
