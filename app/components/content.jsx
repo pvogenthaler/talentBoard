@@ -1,4 +1,4 @@
-import {getJobsData, getChicagoJobs} from '../services/glassdoorApi.js';
+import {getJobsData} from '../services/glassdoorApi.js';
 import {MyPieChart} from './piechart.jsx';
 import {MyBarChart} from './barchart.jsx';
 
@@ -7,48 +7,48 @@ class Content extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
       cityData: [],
+      totalJobs: '',
     };
   }
 
   componentDidMount () {
     const component = this;
-    // getJobsData()
-    // .then((res) => {
-    //   let resData = [];
-    //   for (let state in res.data.response.states) {
-    //     resData.push({
-    //       name: res.data.response.states[state].name,
-    //       value: res.data.response.states[state].numJobs
-    //     });
-    //   }
-    //   component.setState({ data: resData });
-    //   console.log(this.state.data);
-    // }).catch((err) => {
-    //   console.log('error on getting jobs data: ', err);
-    // });
 
-    getChicagoJobs()
+    getJobsData(null, false, 'illinois', true)
     .then((res) => {
-      console.log(res.data.response);
       let resCityData = []
       for (let i = 0; i < 8; i++) {
         resCityData.push({
-          name: res.data.response.cities[i].name,
+          name: res.data.response.cities[i].name.slice(0, -4),
           jobs: res.data.response.cities[i].numJobs
-        })
+        });
       }
       console.log(resCityData);
       component.setState({cityData: resCityData})
     }).catch((err) => {
-      console.log('error on getting illinois jobs data: ', err);
+      console.log('error on getting illinois city jobs data: ', err);
+    });
+
+    getJobsData(null, true, 'illinois', false)
+    .then((res) => {
+      console.log(res.data.response);
+      component.setState({
+        totalJobs: res.data.response.states.Illinois.numJobs
+      });
+    }).catch((err) => {
+      console.log('error on getting total illinois jobs: ', err);
     });
   }
 
+
   render() {
     return (
-      <div>
+      <div className="charts">
+        <div className="totalJobs">
+          <h2>Total Illinois Jobs</h2>
+          <h1>{this.state.totalJobs}</h1>
+        </div>
         <MyBarChart data={this.state.cityData}/>
         {/* <MyPieChart data={this.state.data}/> */}
       </div>

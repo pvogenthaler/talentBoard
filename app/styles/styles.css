@@ -139,6 +139,25 @@ html, body, #container, #containter > div, [data-reactroot] {
   justify-content: flex-start;
 }
 
-.pieContainer {
-  /*background-color: silver;*/
+.charts {
+  width: 100%;
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: dimgrey;
+}
+
+.totalJobs {
+  box-shadow: 0 0 10px silver;
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+  text-align: left;
+}
+
+.barChartContainer {
+  box-shadow: 0 0 10px silver;
+  height: 450px;
+  text-align: center;
 }

@@ -22,12 +22,12 @@ class SearchBar extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="searchForm">
-        <input type="text" value={this.state.value} onChange={this.handleChange} className="searchInput" placeholder="Search for a job..."/>
-        <input type="submit" value="Submit" className="searchButton" />
+        <input type="text" value={this.state.value} onChange={this.handleChange} className="searchInput" placeholder="Enter a keyword..."/>
+        <input type="submit" value="Search" className="searchButton" />
       </form>
     );
   }
-  
+
 }
 
 module.exports.SearchBar = SearchBar;
