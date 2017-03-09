@@ -1,7 +1,6 @@
 import React from 'react';
 import {SearchBar} from '../components/search.jsx';
 
-
 const Header = React.createClass({
   render: function() {
     return (

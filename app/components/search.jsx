@@ -1,6 +1,7 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -26,6 +27,7 @@ class SearchBar extends React.Component {
       </form>
     );
   }
+  
 }
 
 module.exports.SearchBar = SearchBar;
