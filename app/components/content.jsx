@@ -1,22 +1,28 @@
 import {getJobsData} from '../services/glassdoorApi.js';
+import {StraightAnglePieChart} from './piechart.jsx'
 
 class Content extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      data: String
+      data: []
     };
   }
 
-  componentDidMount() {
-    var component = this;
+  componentDidMount () {
+    const component = this;
     getJobsData()
     .then((res) => {
-      console.log('response: ', res);
-      component.setState({
-        data: JSON.stringify(res)
-      });
+      let resData = [];
+      for (let state in res.data.response.states) {
+        resData.push({
+          name: res.data.response.states[state].name,
+          value: res.data.response.states[state].numJobs
+        });
+      }
+      component.setState({ data: resData });
+      console.log(this.state.data);
     }).catch((err) => {
       console.log('error on getting jobs data: ', err);
     });
@@ -25,7 +31,7 @@ class Content extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.data}</h1>
+        <StraightAnglePieChart data={this.state.data}/>
       </div>
     );
   }

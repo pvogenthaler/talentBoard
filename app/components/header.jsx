@@ -1,5 +1,5 @@
 import React from 'react';
-import {SearchBar} from '../components/search.jsx';
+import {SearchBar} from './search.jsx';
 
 const Header = React.createClass({
   render: function() {
