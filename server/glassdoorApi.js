@@ -16,7 +16,7 @@ module.exports = {
       params: {
         't.p': glassdoor.myPartnerId,
         't.k': glassdoor.myPartnerKey,
-        'userip': '192.168.43.42',
+        'userip': '000.000.00.00',
         'useragent': userAgent,
         'v': '1',
         'format': 'json',
