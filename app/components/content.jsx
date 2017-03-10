@@ -1,4 +1,4 @@
-import {getJobsData} from '../services/glassdoorApi.js';
+import {getJobsData} from '../services/getJobsData.js';
 import {MyBarChart} from './barchart.jsx';
 import {PubSub} from '../services/pubsub.js';
 
@@ -31,8 +31,8 @@ class Content extends React.Component {
         let resCityData = []
         for (let i = 0; i < 8; i++) {
           resCityData.push({
-            name: res.data.response.cities[i].name.slice(0, -4),
-            jobs: res.data.response.cities[i].numJobs
+            name: res.data.glassdoor.cities[i].name.slice(0, -4),
+            jobs: res.data.glassdoor.cities[i].numJobs
           });
         }
         component.setState({cityData: resCityData})
@@ -44,7 +44,7 @@ class Content extends React.Component {
       getJobsData(query, true, 'illinois', false, null)
       .then((res) => {
         component.setState({
-          totalJobs: res.data.response.states.Illinois.numJobs
+          totalJobs: res.data.glassdoor.states.Illinois.numJobs
         });
       }).catch((err) => {
         console.log('error on getting total illinois jobs: ', err);
@@ -54,7 +54,7 @@ class Content extends React.Component {
       getJobsData(query, true, 'illinois', false, '7')
       .then((res) => {
         component.setState({
-          weeksJobs: res.data.response.states.Illinois.numJobs
+          weeksJobs: res.data.glassdoor.states.Illinois.numJobs
         });
       }).catch((err) => {
         console.log('error on getting this week\'s illinois jobs: ', err);
@@ -64,7 +64,7 @@ class Content extends React.Component {
       getJobsData(query, true, 'illinois', false, '1')
       .then((res) => {
         component.setState({
-          todaysJobs: res.data.response.states.Illinois.numJobs
+          todaysJobs: res.data.glassdoor.states.Illinois.numJobs
         });
       }).catch((err) => {
         console.log('error on getting this week\'s illinois jobs: ', err);

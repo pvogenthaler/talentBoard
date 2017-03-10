@@ -21,4 +21,4 @@
 // module.exports.MyPieChart = MyPieChart;
 
 
-// deprecated: piechart for all us jobs too slow
+// deprecated: piechart for all US jobs too slow

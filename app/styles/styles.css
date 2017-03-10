@@ -57,11 +57,13 @@ html, body, #container, #containter > div, [data-reactroot] {
   border: solid 2px #dcdcdc;
   transition: box-shadow 0.3s, border 0.3s;
 }
+
 .searchInput:focus {
   outline: none;
   border: solid 1px silver;
   box-shadow: 0 0 5px 3px grey;
 }
+
 .searchInput, textarea {
   background-color : ghostwhite;
   opacity: 0.8;
