@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getJobsData = (query, returnStates, state, returnCities) => {
+const getJobsData = (query, returnStates, state, returnCities, fromAge) => {
   const myPartnerId =	'129184';
   const myPartnerKey =	'iRYYMRiPc0S';
   const url = 'http://api.glassdoor.com/api/api.htm?';
@@ -19,6 +19,7 @@ const getJobsData = (query, returnStates, state, returnCities) => {
       'returnStates': returnStates,
       'state': state,
       'returnCities': returnCities,
+      'fromAge': fromAge || '-1',
     }
   });
 }

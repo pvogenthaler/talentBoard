@@ -1,4 +1,5 @@
 import React from 'react';
+import {PubSub} from '../services/pubsub.js'
 
 class SearchBar extends React.Component {
 
@@ -15,7 +16,7 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    PubSub.publish('newSearch', this.state.value);
     event.preventDefault();
   }
 

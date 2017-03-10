@@ -11,7 +11,7 @@ html, body, #container, #containter > div, [data-reactroot] {
 /* header */
 
 .dashHeader {
-  height: 8%;
+  height: 55px;
   width: 100%;
   top: 0;
   left: 0;
@@ -32,6 +32,7 @@ html, body, #container, #containter > div, [data-reactroot] {
 }
 
 .searchForm {
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -41,7 +42,6 @@ html, body, #container, #containter > div, [data-reactroot] {
 
 .searchInput {
   display: block;
-  margin: 0;
   width: 30%;
   height: 18px;
   font-family: sans-serif;
@@ -49,7 +49,7 @@ html, body, #container, #containter > div, [data-reactroot] {
   appearance: none;
   box-shadow: none;
   border-radius: 3px;
-  margin: 10px;
+  margin: 8px;
   padding: 10px;
   border: solid 2px #dcdcdc;
   transition: box-shadow 0.3s, border 0.3s;
@@ -73,7 +73,7 @@ html, body, #container, #containter > div, [data-reactroot] {
   background-color: grey;
   opacity: 0.8;
   padding: 8px 30px 8px 30px;
-  border: solid 1px ghostwhite;
+  border: solid 1px silver;
   border-radius: 3px;
   transition: color: 0.3s, box-shadow: 0.3s, broder: 0.3s;
 }
@@ -100,7 +100,7 @@ html, body, #container, #containter > div, [data-reactroot] {
 
 .dashFooter {
   height: 100%;
-  width: 4%;
+  width: 55px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -144,20 +144,59 @@ html, body, #container, #containter > div, [data-reactroot] {
   margin: 25px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   color: dimgrey;
 }
 
-.totalJobs {
+.leftVerticalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.totalJobsContainer, .recentJobsContainer {
   box-shadow: 0 0 10px silver;
-  height: 200px;
+  height: 150px;
   width: 200px;
   padding: 20px;
+  margin: 15px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.totalJobsDescription {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.totalJobsNum {
+  font-size: 52px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.recentJobsContainer {
+  height: 190px;
+}
+
+.weeksJobsNum, .todaysJobsNum, .weeksJobsDescription, .todaysJobsDescription {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.todaysJobsNum {
+  margin-bottom: 10px;
+}
+
+.todaysJobsNum, .weeksJobsNum {
+  font-size: 36px;
 }
 
 .barChartContainer {
   box-shadow: 0 0 10px silver;
   height: 450px;
   text-align: center;
+  margin: 15px;
 }
