@@ -8,7 +8,7 @@ class Content extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cityData: [],
+      cityData: [{name: '', jobs: ''}],
       totalJobs: '',
       weeksJobs: '',
       todaysJobs: '',
@@ -20,10 +20,9 @@ class Content extends React.Component {
 
     let component = this;
 
+    // retrieve data and set state for graphs' use
     const loadGraphs = function() {
       let component = this;
-      console.log('component', component);
-      console.log('this', this);
       let query = component.state.searchQuery;
 
       // retrieve city job data for barchart
@@ -74,11 +73,10 @@ class Content extends React.Component {
 
     loadGraphs.call(this);
 
-    // update state and graphs on new search
-    this.token = PubSub.subscribe('newSearch', function(newQuery) {
-      console.log('newQuery: ', newQuery);
-      console.log('component', component);
-      component.setState({searchQuery: newQuery}, function() {
+    // update state and graphs on new search via pubsub
+    PubSub.subscribe('newSearch', function(newQuery) {
+      let capQuery = newQuery[0].toUpperCase() + newQuery.slice(1);
+      component.setState({searchQuery: capQuery}, function() {
         loadGraphs.call(component);
       });
     });
@@ -100,7 +98,7 @@ class Content extends React.Component {
             <h2 className="weeksJobsNum">{this.state.weeksJobs}</h2>
           </div>
         </div>
-        <MyBarChart data={this.state.cityData}/>
+        <MyBarChart data={this.state.cityData} query={this.state.searchQuery}/>
       </div>
     );
   }

@@ -6,6 +6,7 @@ html, body, #container, #containter > div, [data-reactroot] {
   background-color: ghostwhite;
   margin: 0;
   padding: 0;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 /* header */
@@ -17,10 +18,10 @@ html, body, #container, #containter > div, [data-reactroot] {
   left: 0;
   right: 0;
   background: grey; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, dimgrey, lightgrey); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, dimgrey, lightgrey); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, dimgrey, lightgrey); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, dimgrey, lightgrey); /* Standard syntax */
+  background: -webkit-linear-gradient(left, dimgrey, lightgrey);
+  background: -o-linear-gradient(right, dimgrey, lightgrey);
+  background: -moz-linear-gradient(right, dimgrey, lightgrey);
+  background: linear-gradient(to right, dimgrey, lightgrey);
   opacity: 0.8;
 }
 
@@ -30,6 +31,8 @@ html, body, #container, #containter > div, [data-reactroot] {
   float: right;
   box-shadow: 5px 5px 10px silver;
 }
+
+/* search bar */
 
 .searchForm {
   height: 100%;
@@ -79,9 +82,9 @@ html, body, #container, #containter > div, [data-reactroot] {
 }
 
 .searchButton:hover {
-  color: black;
+  color: #FFAE54;
   border: solid 1px grey;
-  box-shadow: 0 0 6px ghostwhite, 0 0 10px ghostwhite;
+  box-shadow: 0 0 6px ghostwhite, 0 0 10px #FFAE54;
   cursor: pointer;
 }
 
@@ -175,6 +178,7 @@ html, body, #container, #containter > div, [data-reactroot] {
   font-size: 52px;
   margin-top: 5px;
   margin-bottom: 0;
+  color: #007FB2;
 }
 
 .recentJobsContainer {
@@ -192,6 +196,7 @@ html, body, #container, #containter > div, [data-reactroot] {
 
 .todaysJobsNum, .weeksJobsNum {
   font-size: 36px;
+  color: #FF9E31;
 }
 
 .barChartContainer {

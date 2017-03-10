@@ -1,8 +1,8 @@
 import React from 'react';
 import {SearchBar} from './search.jsx';
 
-const Header = React.createClass({
-  render: function() {
+class Header extends React.Component{
+  render() {
     return (
       <header className="dashHeader">
         <div className="boxShadow">
@@ -11,6 +11,6 @@ const Header = React.createClass({
       </header>
     )
   }
-});
+};
 
 module.exports.Header = Header;

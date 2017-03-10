@@ -1,5 +1,5 @@
 import React from 'react';
-import {PubSub} from '../services/pubsub.js'
+import {PubSub} from '../services/pubsub.js';
 
 class SearchBar extends React.Component {
 

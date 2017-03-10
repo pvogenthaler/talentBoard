@@ -5,7 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, 'app');
 var APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
-  entry: APP_DIR + '/containers/dashboard.jsx',
+  entry: APP_DIR + '/app.jsx',
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
