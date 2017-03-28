@@ -12,7 +12,7 @@ html, body, #container, #containter > div, [data-reactroot] {
 /* header */
 
 .dashHeader {
-  height: 55px;
+  height: 7vmin;
   width: 100%;
   top: 0;
   left: 0;
@@ -40,20 +40,20 @@ html, body, #container, #containter > div, [data-reactroot] {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 15px;
+  padding-right: 2vmin;
 }
 
 .searchInput {
   display: block;
   width: 30%;
-  height: 18px;
+  height: 3vmin;
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 3vmin;
   appearance: none;
   box-shadow: none;
   border-radius: 3px;
-  margin: 8px;
-  padding: 10px;
+  margin: 1vmin;
+  padding: 1vmin;
   border: solid 2px #dcdcdc;
   transition: box-shadow 0.3s, border 0.3s;
 }
@@ -68,16 +68,16 @@ html, body, #container, #containter > div, [data-reactroot] {
   background-color : ghostwhite;
   opacity: 0.8;
   color: dimgrey;
-  font-size: 18px;
+  font-size: 3vmin;
 }
 
 .searchButton {
   color: silver;
-  font-size: 18px;
+  font-size: 3vmin;
   text-align: center;
   background-color: grey;
   opacity: 0.8;
-  padding: 8px 30px 8px 30px;
+  padding: 1vmin 5vmin 1vmin 5vmin;
   border: solid 1px silver;
   border-radius: 3px;
   transition: color: 0.3s, box-shadow: 0.3s, broder: 0.3s;
@@ -105,7 +105,7 @@ html, body, #container, #containter > div, [data-reactroot] {
 
 .dashFooter {
   height: 100%;
-  width: 55px;
+  width: 7vmin;
   top: 0;
   left: 0;
   bottom: 0;
@@ -123,10 +123,10 @@ html, body, #container, #containter > div, [data-reactroot] {
 }
 
 .menuButtons {
-  height: 30px;
-  width: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  height: 4vmin;
+  width: 4vmin;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
   transition: all .07s ease;
 }
 
@@ -146,7 +146,7 @@ html, body, #container, #containter > div, [data-reactroot] {
 
 .charts {
   width: 100%;
-  margin: 25px;
+  margin: 3vmin;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -161,49 +161,88 @@ html, body, #container, #containter > div, [data-reactroot] {
 
 .totalJobsContainer, .recentJobsContainer {
   box-shadow: 0 0 10px silver;
-  height: 150px;
-  width: 200px;
-  padding: 20px;
-  margin: 15px;
+  height: auto;
+  width: auto;
+  /*height: 150px;
+  width: 200px;*/
+  padding: 3vmin;
+  margin: 2vmin;
   text-align: left;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .totalJobsDescription {
-  margin-bottom: 5px;
+  font-size: 4vmin;
+  margin-bottom: 1vmin;
   margin-top: 0;
 }
 
 .totalJobsNum {
-  font-size: 52px;
-  margin-top: 5px;
+  /*font-size: 52px;*/
+  font-size: 6vmin;
+  margin-top: 1vmin;
   margin-bottom: 0;
   color: #007FB2;
 }
 
 .recentJobsContainer {
-  height: 190px;
+  /*height: 190px;*/
+  height: auto;
 }
 
 .weeksJobsNum, .todaysJobsNum, .weeksJobsDescription, .todaysJobsDescription {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 1vmin;
+  margin-bottom: 1vmin;
+}
+
+.weeksJobsDescription, .todaysJobsDescription {
+  font-size: 3vmin;
 }
 
 .todaysJobsNum {
-  margin-bottom: 10px;
+  margin-bottom: 1vmin;
 }
 
 .todaysJobsNum, .weeksJobsNum {
-  font-size: 36px;
+  /*font-size: 36px;*/
+  font-size: 4vmin;
   color: #FF9E31;
 }
 
 .barChartContainer {
+  display: inline-block;
   box-shadow: 0 0 10px silver;
-  height: 450px;
+  max-height: 475px;
+  max-width: 850px;
+  /*height: 80%;
+  width: 80%;*/
   text-align: center;
-  margin: 15px;
+  margin: 2vmin;
+}
+
+.recharts-wrapper, .recharts-surface {
+  height: 90% !important;
+  width: 100% !important;
+}
+.recharts-legend-wrapper, .recharts-default-legend, .recharts-legend-item {
+  display: none;
+}
+
+/* tablet & mobile */
+
+@media only screen and (max-width: 1255px) {
+  .charts {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .leftVerticalContainer {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .barChartContainer h3 {
+    font-size: 3vmin;
+  }
 }
